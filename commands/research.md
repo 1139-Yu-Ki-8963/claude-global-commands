@@ -1,6 +1,6 @@
 ---
 description: 包括的な調査を実行し、適切な専門エージェントに振り分け
-allowed-tools: ["Task"]
+allowed-tools: ["Task", "TodoWrite"]
 argument-hint: [調査内容]
 ---
 
@@ -65,6 +65,17 @@ $ARGUMENTS
 1. エラー内容を分析
 2. 代替パターンを選択
 3. 必要に応じて手動調査にフォールバック
+
+## TodoWrite使用義務
+
+複雑なタスクの場合、必ずTodoWriteツールでphase管理を行ってください：
+
+1. **タスク開始時**: 全phaseをTodoWriteに登録
+2. **Phase実行中**: 該当phaseをin_progressに変更
+3. **Phase完了時**: 即座にcompletedに変更
+4. **新Phase追加時**: 必要に応じてTodoWriteを更新
+
+詳細は`~/.claude/docs/todowrite-specification.md`を参照。
 
 ## 期待される成果
 

@@ -1,6 +1,6 @@
 ---
 description: 自動コミット - 変更内容をAIが要約して日本語でコミット
-allowed-tools: ["Bash", "Read"]
+allowed-tools: ["Bash", "Read", "TodoWrite"]
 ---
 
 # 自動コミット実行
@@ -33,6 +33,17 @@ allowed-tools: ["Bash", "Read"]
 
 ## 5. コミット後の状態確認
 !git status --porcelain
+
+## TodoWrite使用義務
+
+複雑なタスクの場合、必ずTodoWriteツールでphase管理を行ってください：
+
+1. **タスク開始時**: 全phaseをTodoWriteに登録
+2. **Phase実行中**: 該当phaseをin_progressに変更
+3. **Phase完了時**: 即座にcompletedに変更
+4. **新Phase追加時**: 必要に応じてTodoWriteを更新
+
+詳細は`~/.claude/docs/todowrite-specification.md`を参照。
 
 ## ✅ Validation（検証項目）
 - [ ] [VAL-001] コミット作成確認

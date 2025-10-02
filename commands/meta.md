@@ -1,6 +1,6 @@
 ---
 description: Assistant向けセッション引き継ぎメタプロンプト生成
-allowed-tools: ["Bash", "Read", "TodoWrite"]
+allowed-tools: ["Bash", "Read", "TodoWrite", "mcp__serena__list_memories", "mcp__serena__read_memory"]
 ---
 
 # Assistant向けメタプロンプト生成
@@ -57,8 +57,8 @@ allowed-tools: ["Bash", "Read", "TodoWrite"]
 ### TodoList確認
 TodoListの現在状態を確認し、未完了タスクと優先順位を把握してください。
 
-### プロジェクトメモリ確認
-プロジェクト固有の重要な情報やメモがある場合は確認してください。
+### Serenaメモリ確認
+Serenaメモリがある場合は、保存された重要な情報を確認してください（mcp__serena__list_memories使用）。
 
 ## Step 3: メタプロンプト生成
 

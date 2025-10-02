@@ -1,6 +1,6 @@
 ---
 description: PR自動作成 - Unixパイプラインで効率化、Mermaid図自動生成
-allowed-tools: Bash(gh:*), Bash(git:*), Bash(tee:*), Bash(xargs:*), Bash(pbcopy:*)
+allowed-tools: ["Bash(gh:*)", "Bash(git:*)", "Bash(tee:*)", "Bash(xargs:*)", "Bash(pbcopy:*)", "TodoWrite"]
 argument-hint: [-p | -u]（省略可）
 ---
 
@@ -190,6 +190,17 @@ echo "🔗 クリップボード: $(pbpaste 2>/dev/null || echo 'N/A')"
 ✅ **ログ管理**: 全操作履歴を記録・追跡可能  
 ✅ **エラーハンドリング**: 各ステップで失敗を検知・報告  
 ✅ **クリップボード連携**: ブランチ名を即座に再利用可能
+
+## TodoWrite使用義務
+
+複雑なタスクの場合、必ずTodoWriteツールでphase管理を行ってください：
+
+1. **タスク開始時**: 全phaseをTodoWriteに登録
+2. **Phase実行中**: 該当phaseをin_progressに変更
+3. **Phase完了時**: 即座にcompletedに変更
+4. **新Phase追加時**: 必要に応じてTodoWriteを更新
+
+詳細は`~/.claude/docs/todowrite-specification.md`を参照。
 
 **使用例:**
 - `/pr` - PR作成のみ
